@@ -1,4 +1,4 @@
-## Thoth
+## Project Name: Thoth
 Phase6ReadMe includes the app walkthrough in screenshots. 
 
 ## Topic Area: 
