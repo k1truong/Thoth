@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THOTH App</title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+
+
+
+<!--
+          <p><strong>For testing purposes only:</strong></p>
+          <p>Chair: <span id="acc1addr"></span></p>
+          <p>Hospital 1: <span id="acc2addr"></span></p>
+          <p>Hospital 2: <span id="acc3addr"></span></p>
+          <p>Manufacturer Company: <span id="acc4addr"></span></p>
+          <p>Insurance Company: <span id="acc5addr"></span></p>
+          <p>Doctor 1: <span id="acc6addr"></span></p>
+          <p>Docotor 2: <span id="acc7addr"></span></p>
+          <p>Patient: <span id="acc8addr"></span></p>
+-->
+          <p>MembershipType: 1=Hospital, 2=Manufacturer, 3=Insurance, 4=Doctor, 5=Patient </p>
+
+        <div class="col-lg-8">
+          <h1 class="section-title">Healthcare Exchange Thoth System</h1>
+          <div class="todo functions">
+            <div class="todo-search">
+              <p>Registration</p>
+            </div>
+            <ul class="list">
+    
+              <li class="">
+                <div class="todo-icon fui-user"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong> Membership Type</strong>
+                  </h4>
+
+                  <button id="Register" class="btn btn-info">
+                    <i
+                      class="fui-user"
+                      style="font-size: 17px; margin-right: 5px;"
+                    ></i>
+                    Register
+                  </button>
+
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter membership type"
+                      id="RegisterType"
+                      style="margin-right: 5px;"
+                    />
+<!--
+                    <input
+                    type="text"
+                    class="form-control d-inline"
+                    placeholder="Enter deposit amount"
+                    id="RegDeposit"
+                    style="margin-right: 5px;"
+                  />
+-->
+                  </div>
+                </div>
+              </li>
+
+              <li class="">
+                <div class="todo-icon fui-user"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Disable Membership</strong>
+                  </h4>
+                  <button id="UnRegister" class="btn btn-info">
+                    <i
+                      class="fui-user"
+                      style="font-size: 17px; margin-right: 5px;"
+                    ></i>
+                    Unregister
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter address"
+                      id="UnRegAddress"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="todo functions">
+            <div class="todo-search">
+              <p>Record/Equipment Exchange</p>
+            </div>
+
+            <ul class="list">
+
+              <li class="">
+                <div class="todo-icon fa fa-share"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Request Equipment</strong>
+                  </h4>
+                  <button id="equipmentRequestButton" class="btn btn-info">
+                    Equipment Request
+                  </button>
+                  <div style="float: right; margin-right: 20px;">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control d-inline"
+                        placeholder="Request address"
+                        id="equipReq"
+                        style="margin-right: 5px;"
+                      />
+                      <input
+                        type="text"
+                        class="form-control d-inline"
+                        placeholder="Payment offer"
+                        id="paymentOffer"
+                        style="margin-right: 5px;"
+                      />
+                      <input
+                        type="text"
+                        class="form-control d-inline"
+                        placeholder="Enter password"
+                        id="passwordID"
+                        style="margin-right: 5px;"
+                      />
+                    </div>
+                   
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li class="">
+                <div class="todo-icon fa fa-reply"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Equipment Response</strong>
+                  </h4>
+                  <button id="equipmentResponseButton" class="btn btn-info">
+                    Equipment Reply
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Response address"
+                      id="equipResponseAddressId"
+                      style="margin-right: 5px;"
+                    />
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Will accept? (true/false)"
+                      id="equipResponseId"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="">
+                <div class="todo-icon fa fa-reply"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>End Request</strong>
+                  </h4>
+                  <button id="endButton" class="btn btn-info">
+                    End Request
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Owner address"
+                      id="endAddressId"
+                      style="margin-right: 5px;"
+                    />
+
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li class="">
+                <div class="todo-icon fa fa-money"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Fee Transaction</strong>
+                  </h4>
+                  <button id="feeButton" class="btn btn-info">
+                    Pay
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Enter Recipient Address"
+                      id="feetoAddress"
+                      style="margin-right: 5px;"
+                    />
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Payment Amount"
+                      id="feePayID"
+                      style="margin-right: 5px;"
+                    />
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Transaction Password"
+                      id="feePassID"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="">
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Report Location</strong>
+                  </h4>
+                  <button id="reportButton" class="btn btn-info">
+                    Report Location
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="New Location Address"
+                      id="reportlocationID"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="">
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>View Location</strong>
+                  </h4>
+                  <button id="viewButton" class="btn btn-info">
+                    View Location
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Equipment Owner Address"
+                      id="viewAddressID"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="">
+                <div class="todo-icon fa fa-share"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Request Record</strong>
+                  </h4>
+                  <button id="recordRequestButton" class="btn btn-info">
+                    Record Request
+                  </button>
+                  <div style="float: right; margin-right: 20px;">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control d-inline"
+                        placeholder="Request address"
+                        id="recordReq"
+                        style="margin-right: 5px;"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="">
+                <div class="todo-icon fa fa-reply"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Record Response</strong>
+                  </h4>
+                  <button id="recordresponsebutton" class="btn btn-info">
+                    Record Reply
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Requester address"
+                      id="recordReplyAddress"
+                      style="margin-right: 5px;"
+                    />
+
+                    <input
+                    type="text"
+                    class="form-control d-inline"
+                    placeholder="Will approve?"
+                    id="recordResonse"
+                    style="margin-right: 5px;"
+                  />
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="">
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>View Record</strong>
+                  </h4>
+                  <button id="viewRecordButton" class="btn btn-info">
+                    Can View?
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Record Owner Address"
+                      id="canViewRecordAddress"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+
+
+              <li class="">
+                <div class="todo-icon fui-user"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Approve Doctor</strong>
+                  </h4>
+                  <button id="approveButton" class="btn btn-info">
+                    Approve
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Doctor Address"
+                      id="approveDocID"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="">
+                <div class="todo-icon fui-user"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    <strong>Remove Doctor</strong>
+                  </h4>
+                  <button id="removeButton" class="btn btn-info">
+                    Remove
+                  </button>
+                  <div
+                    class="form-group d-inline"
+                    style="float: right; margin-right: 20px;"
+                  >
+                    <input
+                      type="text"
+                      class="form-control d-inline"
+                      placeholder="Doctor Address"
+                      id="removeDocID"
+                      style="margin-right: 5px;"
+                    />
+                  </div>
+                </div>
+              </li>
+
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/dist/jquery.min.js"></script>
+    <script
+      src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/dist/bootstrap.min.js"></script>
+    <script src="js/dist/flat-ui.min.js"></script>
+    <script src="js/dist/toastr.min.js"></script>
+    <script src="js/dist/web3.min.js"></script>
+    <script src="js/dist/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
